@@ -1,0 +1,13 @@
+{
+  "name": "kakamega-empowerment",
+  "version": "1.0.0",
+  "private": true,
+  "homepage": "https://github.com/nelson-droid/kakamegaempowerment.git",
+  "scripts": {
+    "build": "echo 'No build step required for static site'",
+    "deploy": "gh-pages -d ."
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
+  }
+} 
