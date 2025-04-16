@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kakamega Empowerment</title>
+    <link rel="icon" href="assets/LOGO IMAGE.jpeg" type="image/jpeg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="assets/LOGO IMAGE.jpeg" alt="Kakamega Empowerment Logo" style="height: 80px; vertical-align: middle; margin-right: 16px; border-radius: 10px;">
+                Kakamega Empowerment
+            </div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#projects">Projects</a>
+                <a href="#get-involved" class="get-involved-btn">Get Involved</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero" style="background: linear-gradient(rgba(45, 90, 39, 0.3), rgba(45, 90, 39, 0.3)), url('assets/COVER.png') center/cover no-repeat;">
+        <div class="hero-content">
+            <h1>Welcome to Kakamega Empowerment</h1>
+            <p>Addressing climate change and gender-based violence through sustainable urban solutions</p>
+            <a href="#about" class="cta-button">Learn More</a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <div class="about-summary" style="max-width: 700px; margin: 0 auto 2.5rem auto; font-size: 1.1rem; color: #444; text-align: center;">
+                Kakamega Empowerment is a community-driven organization dedicated to advancing sustainable farming practices and modern urban planting techniques in Kakamega, Kenya. Our mission is to empower rural and urban communities by promoting innovative, climate-smart agriculture that ensures food security, environmental stewardship, and economic opportunity for all.
+                <br><br>
+                We believe that the future of our region depends on the adoption of resilient, eco-friendly farming methods and the integration of urban agriculture into daily life. Through hands-on training, demonstration gardens, and educational outreach, we equip individuals and families with the knowledge and tools to grow healthy food, restore soil health, and build greener cities. Our team collaborates with local leaders, schools, and partner organizations to inspire a new generation of farmers and urban gardeners, fostering a culture of sustainability and self-reliance.
+                <br><br>
+                Join us as we cultivate a thriving, sustainable future for Kakamega—one garden, one community at a time.
+            </div>
+            <div class="mission-vision">
+                <div class="mission">
+                    <h3>Our Mission</h3>
+                    <p>To empower communities through sustainable environmental practices while addressing gender-based violence.</p>
+                </div>
+                <div class="vision">
+                    <h3>Our Vision</h3>
+                    <p>A world where environmental sustainability and gender equality go hand in hand.</p>
+                </div>
+            </div>
+            <div class="team">
+                <h2 class="team-title">Meet Our Team</h2>
+                <p class="team-desc">Passionate individuals dedicated to creating sustainable change in our communities.</p>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="team-photo"><img src="assets/chairman.jpeg" alt="Nelson Likhaya"></div>
+                        <h3>Nelson Likhaya</h3>
+                        <p class="team-role">Chairman</p>
+                        <p class="team-bio">Environmental scientist with 5+ years of experience in sustainable agriculture and climate policy.</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-photo"><img src="assets/baa.jpeg" alt="Barrack Likhaya"></div>
+                        <h3>Barrack Likhaya</h3>
+                        <p class="team-role">Director of Operations</p>
+                        <p class="team-bio">Former urban planner who specializes in designing efficient, sustainable community spaces.</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-photo"><img src="assets/euphie.jpeg" alt="Euphemia Andeso"></div>
+                        <h3>Euphemia Andeso</h3>
+                        <p class="team-role">Education Director</p>
+                        <p class="team-bio">Develops our curriculum and training programs for schools and community workshops.</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-photo"><img src="assets/innocent.jpeg" alt="Innocent Likhaya"></div>
+                        <h3>Innocent Likhaya</h3>
+                        <p class="team-role">Climate Initiatives Lead</p>
+                        <p class="team-bio">Specializes in measuring and optimizing the climate impact of our farming practices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>Our Projects</h2>
+        <!-- Admin-only: Add Project Button (future functionality) -->
+        <button class="add-project-btn" style="display: block; margin: 0 auto 2rem auto; padding: 0.8rem 2rem; background: var(--jungle-green); color: #fff; border: none; border-radius: 2rem; font-size: 1.1rem; font-weight: 700; cursor: pointer; box-shadow: 0 2px 8px rgba(45,90,39,0.08);">Add Project</button>
+        <div class="project-gallery">
+            <div class="project-card">
+                <img src="assets/KALES IMAGE 1.JPEG" alt="Kales Demonstration Garden">
+                <div class="project-info">
+                    <h3>Kales Demonstration Garden</h3>
+                    <p>This project showcases sustainable kales farming techniques, teaching local farmers how to maximize yield using organic methods and efficient irrigation. The demonstration garden serves as a hands-on learning site for the community.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="assets/KALES IMAGE 2.JPEG" alt="Community Kales Plot">
+                <div class="project-info">
+                    <h3>Community Kales Plot</h3>
+                    <p>Our community kales plot empowers families to grow nutritious vegetables at home. The project provides seedlings, training, and support, promoting food security and healthy eating habits in the region.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="assets/SCHOOL.JPG" alt="School Garden Initiative">
+                <div class="project-info">
+                    <h3>School Garden Initiative</h3>
+                    <p>Partnering with local schools, this initiative introduces students to modern urban planting and sustainable agriculture. School gardens are used for practical lessons, environmental education, and supplementing school meals.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="assets/VERTICAL.JPG" alt="Vertical Farming Project">
+                <div class="project-info">
+                    <h3>Vertical Farming Project</h3>
+                    <p>Our vertical farming project demonstrates innovative urban agriculture techniques, making it possible to grow fresh produce in limited spaces. This project inspires urban dwellers to adopt sustainable food production at home.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Involved Section -->
+    <section id="get-involved" class="get-involved">
+        <h2>Get Involved</h2>
+        <p class="section-description">Join our mission to create sustainable communities and fight climate change. There are many ways to contribute.</p>
+
+        <div class="involvement-options">
+            <!-- Volunteer Option -->
+            <div class="involvement-card">
+                <div class="icon">
+                    <i class="fas fa-user-friends"></i>
+                </div>
+                <h3>Volunteer</h3>
+                <p>Share your time and skills to help with gardening, education, events, and more.</p>
+                <button class="action-button" onclick="openVolunteerForm()">Become a Volunteer</button>
+            </div>
+
+            <!-- Donate Option -->
+            <div class="involvement-card">
+                <div class="icon">
+                    <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <h3>Donate</h3>
+                <p>Support our projects financially. Every contribution makes a difference in our mission.</p>
+                <button class="action-button" onclick="openDonateForm()">Make a Donation</button>
+            </div>
+
+            <!-- Partner Option -->
+            <div class="involvement-card">
+                <div class="icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3>Partner</h3>
+                <p>Collaborate with us as a business, school, or organization to create greater impact.</p>
+                <button class="action-button" onclick="openPartnerForm()">Become a Partner</button>
+            </div>
+        </div>
+
+        <!-- Volunteer Form Modal -->
+        <div id="volunteerFormModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('volunteerFormModal')">&times;</span>
+                <h3>Volunteer Application</h3>
+                <form id="volunteerForm" onsubmit="submitVolunteerForm(event)">
+                    <div class="form-group">
+                        <label for="volunteerName">Full Name</label>
+                        <input type="text" id="volunteerName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="volunteerEmail">Email Address</label>
+                        <input type="email" id="volunteerEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="volunteerPhone">Phone Number</label>
+                        <input type="tel" id="volunteerPhone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="volunteerInterests">Areas of Interest</label>
+                        <select id="volunteerInterests" name="interests" required>
+                            <option value="">Select an area</option>
+                            <option value="gardening">Gardening</option>
+                            <option value="education">Education</option>
+                            <option value="events">Events</option>
+                            <option value="administration">Administration</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="volunteerMessage">Message</label>
+                        <textarea id="volunteerMessage" name="message" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Submit Application</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Donation Form Modal -->
+        <div id="donateFormModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('donateFormModal')">&times;</span>
+                <h3>Support Our Mission</h3>
+                <p class="donation-description">Your financial contribution helps us create more community gardens, educate more people, and make a bigger impact on climate change.</p>
+                <form id="donationForm" onsubmit="submitDonation(event)">
+                    <div class="donation-amounts">
+                        <button type="button" class="amount-btn" data-amount="10">$10</button>
+                        <button type="button" class="amount-btn" data-amount="25">$25</button>
+                        <button type="button" class="amount-btn" data-amount="50">$50</button>
+                        <button type="button" class="amount-btn" data-amount="100">$100</button>
+                        <button type="button" class="amount-btn" data-amount="250">$250</button>
+                        <button type="button" class="amount-btn" data-amount="500">$500</button>
+                    </div>
+                    <div class="form-group">
+                        <label for="customAmount">Custom Amount</label>
+                        <input type="number" id="customAmount" name="amount" min="1" step="1" placeholder="Enter amount">
+                    </div>
+                    <div id="stripe-container"></div>
+                    <button type="submit" class="submit-button">Donate Now</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Partner Form Modal -->
+        <div id="partnerFormModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('partnerFormModal')">&times;</span>
+                <h3>Partnership Inquiry</h3>
+                <form id="partnerForm" onsubmit="submitPartnerForm(event)">
+                    <div class="form-group">
+                        <label for="organizationName">Organization Name</label>
+                        <input type="text" id="organizationName" name="organization" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactPerson">Contact Person</label>
+                            <input type="text" id="contactPerson" name="contact" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="position">Position/Title</label>
+                            <input type="text" id="position" name="position" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="partnerEmail">Email Address</label>
+                            <input type="email" id="partnerEmail" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="partnerPhone">Phone Number</label>
+                            <input type="tel" id="partnerPhone" name="phone">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="partnershipType">Partnership Type</label>
+                        <select id="partnershipType" name="type" required>
+                            <option value="">Select partnership type</option>
+                            <option value="business">Business</option>
+                            <option value="school">School</option>
+                            <option value="ngo">NGO</option>
+                            <option value="government">Government</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="partnershipGoals">Partnership Goals & Ideas</label>
+                        <textarea id="partnershipGoals" name="goals" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Submit Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Kakamega, Kenya</p>
+                <p><i class="fas fa-phone"></i> +254703456604</p>
+                <p><i class="fas fa-envelope"></i> nelsonlikhaya@gmail.com</p>
+                <div class="social-links">
+                    <a href="https://facebook.com/groups/2987691661543453/" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <form id="contact-form" class="contact-form" action="mailto:nelsonlikhaya@gmail.com" method="POST" enctype="text/plain">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <a href="mailto:nelsonlikhaya@gmail.com?subject=Contact%20from%20Website" class="submit-button" onclick="alert('Your email client will open. Please complete and send your message.');">Send Email</a>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Kakamega Empowerment</h4>
+                <p>Empowering communities through sustainable solutions</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Kakamega Empowerment. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
