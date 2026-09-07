@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || ""; // Set ADMIN_PASSWORD in .env
+const ADMIN_PASSWORD = process.env.NEXT_PUBLIC_ADMIN_PASSWORD || "";
 const SESSION_KEY = "kakamega_admin_session";
 
 export default function AdminLoginPage() {
