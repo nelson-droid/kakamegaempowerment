@@ -1,12 +1,12 @@
 // Prisma schema for Kakamega Empowerment
-// Database: SQLite (development)
+// Database: SQLite (local development) / PostgreSQL (production on Vercel)
 
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
