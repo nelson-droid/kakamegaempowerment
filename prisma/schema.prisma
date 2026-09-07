@@ -1,0 +1,165 @@
+// Prisma schema for Kakamega Empowerment
+// Database: SQLite (development)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// User model for admin/auth
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String?
+  role      String   @default("user") // admin, editor, user
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  treeEntries TreeEntry[]
+  volunteers  Volunteer[]
+  stories     Story[]
+}
+
+// Volunteer registration
+model Volunteer {
+  id           String   @id @default(cuid())
+  firstName    String
+  lastName     String
+  email        String
+  phone        String
+  location     String?
+  community    String
+  interests    String   // JSON array stored as string
+  availability String   // JSON array stored as string
+  motivation   String
+  experience   String?
+  howDidYouHear String?
+  status      String   @default("pending") // pending, approved, rejected
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  // Relations
+  userId      String?
+  user        User?    @relation(fields: [userId], references: [id])
+}
+
+// Tree planting entries
+model TreeEntry {
+  id        String   @id @default(cuid())
+  trees     Int
+  species   String
+  community String
+  location  String?
+  notes     String?
+  latitude  Float?
+  longitude Float?
+  createdAt DateTime @default(now())
+
+  // Relations
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id])
+}
+
+// Events
+model Event {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  date        DateTime
+  time        String
+  location    String
+  type        String   // tree-planting, workshop, cleanup, meeting, training, youth
+  spots       Int
+  registered  Int      @default(0)
+  image       String?
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Projects
+model Project {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  location    String
+  status      String   @default("active") // planning, active, completed
+  progress    Int      @default(0) // 0-100
+  trees       Int      @default(0)
+  volunteers  Int      @default(0)
+  type        String   // forest, school, river, farm, garden, wetland, park
+  latitude    Float?
+  longitude   Float?
+  image       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  stories     Story[]
+}
+
+// Community stories
+model Story {
+  id         String   @id @default(cuid())
+  title      String
+  content    String
+  authorName String
+  authorRole String?
+  image      String?
+  isFeatured Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  // Relations
+  projectId  String?
+  project    Project? @relation(fields: [projectId], references: [id])
+  userId     String?
+  user       User?    @relation(fields: [userId], references: [id])
+}
+
+// Newsletter subscribers
+model Subscriber {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+}
+
+// Contact form messages
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  subject   String
+  message   String
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Donations
+model Donation {
+  id              String   @id @default(cuid())
+  amount          Float
+  currency        String   @default("USD")
+  paymentMethod   String   // "stripe" or "mpesa"
+  paymentStatus   String   @default("pending") // pending, completed, failed, cancelled
+  donorName       String
+  donorEmail      String
+  donorPhone      String?
+  isAnonymous     Boolean  @default(false)
+  message         String?
+  // Stripe-specific
+  stripePaymentId String?  @unique
+  // M-Pesa specific
+  mpesaCheckoutId String?  @unique
+  mpesaReceipt    String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}

@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* Kakamega Empowerment Color Palette - Sophisticated Environmental Design */
+  --primary: #2E523E;           /* Forest Green - primary brand */
+  --primary-dark: #1E3D2A;      /* Darker forest green */
+  --secondary: #8A9A5B;         /* Olive - secondary accent */
+  --accent: #C9A86A;            /* Sunlight/Sandy - warm accent */
+  --earth: #6B4C3A;              /* Earth brown - grounding */
+  --success: #10B981;           /* Success/emerald */
+  --warning: #F59E0B;           /* Warning/golden */
+  --info: #3B82F6;               /* Info/blue */
+  --destructive: #EF4444;       /* Danger/red */
+
+  /* Light theme colors */
+  --card: #F8FAFC;
+  --card-border: #E2E8F0;
+  --popover: #FFFFFF;
+  --popover-border: #E2E8F0;
+  --primary-contrast: #FFFFFF;
+
+  /* Gradient colors for visual richness */
+  --gradient-start: #2E523E;
+  --gradient-end: #8A9A5B;
+  --gradient-accent: #C9A86A;
+
+  /* Kenyan heritage accents */
+  --kenya-gold: #FCD34D;        /* Kenyan flag gold */
+  --kenya-red: #EF4444;         /* Kenyan flag red */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0F172A;
+    --foreground: #F1F5F9;
+    --card: #1E293B;
+    --card-border: #334155;
+    --popover: #1E293B;
+    --popover-border: #334155;
+    --primary-contrast: #FFFFFF;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* Custom utilities */
+.bg-gradient-to-trues {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end), var(--gradient-accent));
+}
+
+/* ============================================================ */
+/* Animations — scroll-in, float, gradient-shift, pulse-glow     */
+/* ============================================================ */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(2deg); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(-20px) translateX(10px); }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+  50% { box-shadow: 0 0 30px 10px rgba(34, 197, 94, 0.15); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 10s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2.5s linear infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s ease-out forwards;
+}
+
+/* Parallax-like hero image styling */
+.hero-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.35;
+  will-change: transform;
+}
+
+/* Decorative leaf SVGs */
+.leaf-decoration {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.15;
+}
+
+/* Reduce motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-float-slow,
+  .animate-gradient,
+  .animate-pulse-glow,
+  .animate-shimmer,
+  .animate-spin-slow,
+  .animate-fade-up {
+    animation: none !important;
+  }
+  .transition-all {
+    transition: none !important;
+  }
+}
