@@ -64,9 +64,13 @@ export const metadata: Metadata = {
     ]
   },
   icons: {
-    icon: "/kakamega-empowerment-logo-transparent.png",
+    icon: [
+      { url: "/logo-64.png", sizes: "64x64", type: "image/png" },
+      { url: "/logo-128.png", sizes: "128x128", type: "image/png" },
+      { url: "/kakamega-empowerment-logo-transparent.png", sizes: "any", type: "image/png" },
+    ],
     shortcut: "/kakamega-empowerment-logo-transparent.png",
-    apple: "/kakamega-empowerment-logo-transparent.png",
+    apple: "/logo-512.png",
   },
   manifest: "/site.webmanifest",
 };

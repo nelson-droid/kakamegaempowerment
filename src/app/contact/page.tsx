@@ -16,9 +16,12 @@ export default function ContactPage() {
         {/* HERO */}
         <section className="relative py-24 md:py-32 bg-gradient-to-br from-green-900 via-green-800 to-emerald-700 text-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6 border border-white/20">
-              <span>📧</span>
-              <span className="text-white/90 text-sm font-medium">Get in Touch</span>
+            <div className="mb-6">
+              <img
+                src="/kakamega-empowerment-logo-transparent.png"
+                alt="Kakamega Empowerment"
+                className="w-32 h-32 mx-auto object-contain"
+              />
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
               Contact Us

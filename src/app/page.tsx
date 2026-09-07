@@ -130,8 +130,19 @@ export default async function Home() {
           <LeafSVG className="leaf-decoration animate-float w-24 h-24 text-green-200 bottom-24 right-12 md:bottom-32 md:right-24 opacity-15" />
           <LeafSVG className="leaf-decoration animate-float-slow w-20 h-20 text-emerald-300 top-32 right-1/4 opacity-10" />
 
-          {/* Hero Content */}
+          {/* Organization Logo */}
           <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div
+              className="mb-8 animate-fade-up"
+              style={{ animationDelay: "100ms" }}
+            >
+              <img
+                src="/kakamega-empowerment-logo-transparent.png"
+                alt="Kakamega Empowerment CBO"
+                className="w-36 h-36 mx-auto object-contain drop-shadow-2xl"
+              />
+            </div>
+
             <div
               className="inline-flex items-center gap-2 px-5 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-8 border border-white/25 animate-fade-up"
               style={{ animationDelay: "200ms" }}
