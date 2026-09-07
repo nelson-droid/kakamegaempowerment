@@ -38,7 +38,7 @@ git clone https://github.com/YOUR_USERNAME/kakamega-empowerment.git
 cd kakamega-empowerment
 
 # Install dependencies
-npm install
+npm install --legacy-peer-deps
 
 # Set up environment variables
 cp .env.example .env
@@ -53,6 +53,18 @@ npm run dev
 ```
 
 Visit [http://localhost:3000](http://localhost:3000)
+
+## 🗄️ Database
+
+The project uses **PostgreSQL** (via Prisma) for both local and production environments.
+
+**Free PostgreSQL options:**
+- [Neon](https://neon.tech) — 0.5 GB free, recommended
+- [Vercel Postgres](https://vercel.com/storage/postgres) — built-in if hosting on Vercel
+- [Supabase](https://supabase.com) — 500 MB free with dashboard UI
+- [Railway](https://railway.app) — $5 free trial
+
+For local development you can also use SQLite by changing the `provider` in `prisma/schema.prisma` to `sqlite` and the `DATABASE_URL` to `file:./dev.db`.
 
 ## 📜 Available Scripts
 
